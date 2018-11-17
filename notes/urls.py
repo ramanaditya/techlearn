@@ -16,5 +16,6 @@ urlpatterns = [
     path('machine_learning_notes/',views.machine_learning_notes,name = 'machine_learning_notes'),
     path('front_end_notes/',views.front_end_notes,name = 'front_end_notes'),
     path('c_notes/',views.c_notes,name = 'c_notes'),
-
+    path('add/',views.add,name='add'),
+    path('comment/',views.comment,name='comment'),
 ]
