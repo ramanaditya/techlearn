@@ -1,0 +1,10 @@
+{% load static %}
+
+.container-login{
+	font-size: 20px;
+	text-align: right;
+	margin-right: 30px;
+	position: relative;
+	padding-top: 100px;
+
+}
