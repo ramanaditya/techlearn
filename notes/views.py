@@ -159,10 +159,34 @@ def add(request):
 
         if user_form.is_valid():
             username = user_form.cleaned_data.get('content')
+            tag_name = user_form.cleaned_data.get('tag')
+            note = notes.objects.order_by('tag')
             #raw_password = user_form.cleaned_data.get('post_comment')
             user_form.save()
 
             posted = True
+
+            #a = ['PYTHON','DJANGO','JAVA','MYSQL','MACHINE_LEARNING','JAVASCRIPT','FRONT_END','C/C++']
+            #tag_list = []
+            #for entry in note:
+            if tag_name == 'PYTHON':
+                return python_notes(request)
+                #tag_list.append('python_list')
+            elif tag_name == 'DJANGO':
+                return django_notes(request)
+            elif tag_name == 'JAVA':
+                return java_notes(request)
+            elif tag_name == 'MYSQL':
+                return java_notes(request)
+            elif tag_name == 'MACHINE_LEARNING':
+                return machine_learning_notes(request)
+            elif tag_name == 'JAVASCRIPT':
+                return javascript_notes(request)
+            elif tag_name == 'FRONT_END':
+                return front_end_notes(request)
+            else:
+                return c_notes(request)
+            return render(request, 'notes/notes.html',{'tag_list':tag_list,})
         else:
             print(user_form.errors)
     else:
@@ -174,20 +198,16 @@ def add(request):
 
 def comment(request):
     posted=False
-
     if request.method == 'POST':
         user_form =CommentForm(request.POST)
-        python_comment = []
+        
         if user_form.is_valid():
             username = user_form.cleaned_data.get('name')
             raw_password = user_form.cleaned_data.get('post_comment')
             user_form.save()
             posted=True
-            com = comments.objects.all()
-
-
-            python_comment.append(com)
-            return render_to_response('notes/notes.html',{'python_comment':python_comment,})
+            
+            #return render_to_response('notes/notes.html',{'python_comment':python_comment,})
         else:
             print(user_form.errors)
     else:

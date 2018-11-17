@@ -10,7 +10,7 @@
 
   </div>
        {% if posted  %}
-          <h2>thankyou for posting</h2>
+          {% url 'notes:index.html' %}
           {% else %}
           <div class = "add">
           <h1>Edit Form</h1>
