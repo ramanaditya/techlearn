@@ -1,0 +1,33 @@
+{% extends "notes/base.html" %}
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'style/registration.css' %}">
+{% endblock %}
+{% block body_block %}
+
+<div class="container">
+  <div class="jumbotron">
+
+  </div>
+       {% if posted  %}
+          <h2>thankyou for posting</h2>
+          {% else %}
+          <div class = "comment">
+          <h1>Edit Form</h1>
+        </div>
+        <div class = "forms">
+          <h3>Write your views</h3>
+
+          <form method="post">
+            {% csrf_token %}
+            {{ user_form.as_p }}
+            <input type="submit" name="" value="Post">
+          </form>
+        </div>
+       {% endif %}
+</div>
+
+
+
+
+{% endblock %}
