@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.utils import timezone
-from notes.forms import UserForm,notes_form
+from notes.forms import UserForm,notes_form,CommentForm
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
@@ -140,11 +140,11 @@ from django.contrib.auth.views import LoginView, LogoutView
 #     template_name = 'notes/login.html'
 
 
-
 @login_required
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('logout'))
+
 
 
 

@@ -46,15 +46,13 @@ class notes(models.Model):
 
 #For Commenting on any post it will require login
 
-
-
-
 class comments(models.Model):
     name = models.CharField(blank = True ,max_length = 50)
     post_comment= models.CharField(blank = True , max_length = 200)
 
     def __str__(self):
         return self.post_comment
+
 #For storing Feedback from any visitors
 class Feedback(models.Model):
     feedback_name = models.CharField(max_length = 50)
