@@ -4,10 +4,11 @@
 <link rel="stylesheet" type="text/css" href="{% static 'style/index.css' %}">
 {% endblock %}
 {% block body_block %}
-<div class = "bg-image img1"></div>
+<div class = "bg-image img1" style="height: 550px"></div>
 <div class="container-fluids bg-4 text-center">
-  <h1 class="heading">NOTES</h1><hr><hr>
-  <div class="row">
+  <h1 class="heading" style="padding-top: 20px">NOTES</h1><hr><hr>
+  <div class="row" style="height: 110px;margin-top: 100px;
+  margin-bottom: 80px">
     <div class="col-sm-1"></div>
     <div class="col-sm-2">
       <a href ="{% url 'notes:python_notes' %}">
@@ -62,7 +63,7 @@
     </div>
   </div>
 </div>
-<div class = "bg-image img2"></div>
+<div class = "bg-image img2" style="height: 0px"></div>
 <div class="container">
   <div class = "authors">
     <div class="container-fluid-author bg-3 text-center">

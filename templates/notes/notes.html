@@ -22,7 +22,7 @@
               <p>Published: {{ note.published_date }}</p>
               <p>Author: {{ note.author }}</p><br>
           </div>
-          <p>{{ note.content|linebreaksbr }}</p><hr>
+          <p>{{ note.content|safe|truncatechars:"200" }}</p><hr>
         </div>
         {% endfor %}
         {% for note in java_list %}

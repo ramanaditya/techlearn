@@ -3,9 +3,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>projectbook</title>
+    <title>TechLearn</title>
     <meta charset="utf-8"/>
   	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Amaranth|Audiowide|Bangers" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -17,20 +18,25 @@
 
   <body>
     <nav class="navbar navbar-inverse" >
-      <div class="container-fluid">
+      <div class="container-fluid" style="height: 70px ">
         <div class="navbar-header">
-          <a class="navbar-brand" href="{% url "index" %}">ProjectBook</a>
+          <a class="navbar-brand" style="margin-top: 10px; font-size: 40px; font-family: 'Audiowide', cursive;
+" href="{% url "index" %}">TechLearn</a>
         </div>
         <ul class="nav navbar-nav">
-          <li ><a href="#">Projects</a></li>
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Resources<span class="caret"></span></a>
+          <li ><a href="#" style="margin-top: 10px; font-size: 20px;font-family: 'Amaranth', sans-serif;
+">Projects</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" style="margin-top: 10px;font-size: 20px;font-family: 'Amaranth', sans-serif;
+" href="#">Resources<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Notes</a></li>
-              <li><a href="#"></a></li>
+              <li><a href="#" style="margin-top: 10px;font-family: 'Amaranth', sans-serif;
+";>Notes</a></li>
+              <li><a href="#" style="margin-top: 10px";></a></li>
               <li><a href="#"></a></li>
             </ul>
           </li>
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Authors<span class="caret"></span></a>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" style="margin-top: 10px;font-size: 20px;font-family: 'Amaranth', sans-serif;
+"; href="#">Authors<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="https://github.com/ramanaditya">Aditya Raman</a></li>
               <li><a href="https://github.com/ar1998">Arsh Deep</a></li>
@@ -41,12 +47,15 @@
         <ul class="nav navbar-nav navbar-right">
           {% if user.is_authenticated %}
           {% else %}
-          <li><a href="{% url 'notes:register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a style="margin-top: 10px;font-size: 20px;font-family: 'Amaranth', sans-serif;
+" href="{% url 'notes:register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
           {% endif %}
           {% if user.is_authenticated %}
-          <li><a href="{% url 'notes:logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          <li><a style="margin-top: 10px; font-size: 20px;font-family: 'Amaranth', sans-serif;
+" href="{% url 'notes:logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
           {% else %}
-              <li><a href="{% url 'notes:user_login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li><a style="margin-top: 10px;font-size: 20px;font-family: 'Amaranth', sans-serif;
+" href="{% url 'notes:user_login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           {% endif %}
         </ul>
       </div>
