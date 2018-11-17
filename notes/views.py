@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
 from .models import notes
+from .forms import CommentForm
 
 def index(request):
     return render(request, 'notes/index.html')
@@ -144,3 +145,51 @@ def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('logout'))
 
+
+
+
+
+
+@login_required
+
+def add(request):
+    posted = False
+    if request.method == 'POST':
+        user_form =notes_form(request.POST)
+
+        if user_form.is_valid():
+            username = user_form.cleaned_data.get('content')
+            #raw_password = user_form.cleaned_data.get('post_comment')
+            user_form.save()
+
+            posted = True
+        else:
+            print(user_form.errors)
+    else:
+        user_form = notes_form()
+    return render(request,'notes/addtocomment.html',{'user_form':user_form,
+                                                     'posted':posted})
+
+
+
+def comment(request):
+    posted=False
+
+    if request.method == 'POST':
+        user_form =CommentForm(request.POST)
+        python_comment = []
+        if user_form.is_valid():
+            username = user_form.cleaned_data.get('name')
+            raw_password = user_form.cleaned_data.get('post_comment')
+            user_form.save()
+            posted=True
+            com = comments.objects.all()
+
+
+            python_comment.append(com)
+            return render_to_response('notes/notes.html',{'python_comment':python_comment,})
+        else:
+            print(user_form.errors)
+    else:
+        user_form = CommentForm()
+    return render(request,'notes/comment.html',{'user_form':user_form,'posted':posted},)

@@ -16,15 +16,26 @@
         {% for note in python_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
-            <a href="#" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="{% url 'notes:add' %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
           </h1><hr>
           <div class="date">
               <p>Published: {{ note.published_date }}</p>
               <p>Author: {{ note.author }}</p><br>
           </div>
-          <p>{{ note.content|safe|truncatechars:"200" }}</p><hr>
+
+          <p>{{ note.content|linebreaksbr }}</p><hr>
+
+            <a href="{% url 'notes:comment' %}"><button type="button" name="button">Add Comment</button></a>
+          <div>
+            {% for com in python_comment %}
+              {{ com.name }}
+            {% endfor %}
+          </div>
+          
+
         </div>
         {% endfor %}
+
         {% for note in java_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
