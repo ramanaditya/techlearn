@@ -16,19 +16,31 @@
         {% for note in python_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
-            <a href="#" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="{% url 'notes:add' %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
           </h1><hr>
           <div class="date">
               <p>Published: {{ note.published_date }}</p>
               <p>Author: {{ note.author }}</p><br>
           </div>
+
           <p>{{ note.content|linebreaksbr }}</p><hr>
+
+            <a href="{% url 'notes:comment' %}"><button type="button" name="button">Add Comment</button></a>
+          <div>
+            {% for comment in python_comment %}
+            Name: {{ user.username }}<br>
+            Comment: {{ comment.post_comment }}<br><br><hr>
+            {% endfor %}
+          </div>
+          
+
         </div>
         {% endfor %}
+
         {% for note in java_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
-            <a href="#" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="{% url 'notes:add' %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
           </h1><hr>
           <div class="date">
               <p>Published: {{ note.published_date }}</p>
@@ -37,10 +49,12 @@
           <p>{{ note.content|linebreaksbr }}</p><hr>
         </div>
         {% endfor %}
+
+
         {% for note in javascript_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
-            <a href="#" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="{% url 'notes:add' %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
           </h1><hr>
           <div class="date">
               <p>Published: {{ note.published_date }}</p>
@@ -49,10 +63,12 @@
           <p>{{ note.content|linebreaksbr }}</p><hr>
         </div>
         {% endfor %}
+
+
         {% for note in mysql_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
-            <a href="#" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="{% url 'notes:add' %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
           </h1><hr>
           <div class="date">
               <p>Published: {{ note.published_date }}</p>
@@ -61,10 +77,12 @@
           <p>{{ note.content|linebreaksbr }}</p><hr>
         </div>
         {% endfor %}
+
+
         {% for note in machine_learning_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
-            <a href="#" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="{% url 'notes:add' %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
           </h1><hr>
           <div class="date">
               <p>Published: {{ note.published_date }}</p>
@@ -73,10 +91,12 @@
           <p>{{ note.content|linebreaksbr }}</p><hr>
         </div>
         {% endfor %}
+
+
         {% for note in front_end_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
-            <a href="#" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="{% url 'notes:add' %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
           </h1><hr>
           <div class="date">
               <p>Published: {{ note.published_date }}</p>
@@ -85,10 +105,12 @@
           <p>{{ note.content|linebreaksbr }}</p><hr>
         </div>
         {% endfor %}
+
+
         {% for note in django_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
-            <a href="#" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="{% url 'notes:add' %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
           </h1><hr>
           <div class="date">
               <p>Published: {{ note.published_date }}</p>
@@ -97,10 +119,12 @@
           <p>{{ note.content|linebreaksbr }}</p><hr>
         </div>
         {% endfor %}
+
+
         {% for note in c_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
-            <a href="#" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="{% url 'notes:add' %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
           </h1><hr>
           <div class="date">
               <p>Published: {{ note.published_date }}</p>

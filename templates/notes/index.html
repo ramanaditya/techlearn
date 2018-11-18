@@ -1,15 +1,19 @@
 {% extends "notes/base.html" %}
 {% load static %}
 {% block extrahead %}
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{% static 'style/index.css' %}">
 {% endblock %}
 {% block body_block %}
-<div class = "bg-image img1"></div>
+<div class = "bg-image img1" style="height: 550px">
+
+</div>
 <div class="container-fluids bg-4 text-center">
-  <h1 class="heading">NOTES</h1><hr><hr>
-  <div class="row">
+  <h1 class="heading" style="padding-top: 20px;font-family: 'Comfortaa', cursive;">NOTES</h1><hr><hr>
+  <div class="row" style="height: 110px;margin-top: 100px;
+  margin-bottom: 80px">git
     <div class="col-sm-1"></div>
-    <div class="col-sm-2">
+     <div class="col-sm-2">
       <a href ="{% url 'notes:python_notes' %}">
       <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" class="img-responsive" style="width:100%" alt="Python logo" style="top:50%;left:50%;">
     </a>
@@ -62,20 +66,31 @@
     </div>
   </div>
 </div>
-<div class = "bg-image img2"></div>
+<div class = "bg-image img2" style="height: 0px"></div>
 <div class="container">
   <div class = "authors">
     <div class="container-fluid-author bg-3 text-center">
-      <h1 class = "author-body">AUTHORS</h1><hr><hr>
+      <h1 class = "author-body" style="font-family: 'Comfortaa', cursive; color: white">AUTHORS</h1><hr><hr>
       <div class="row">
+        <div class="col-sm-1"></div>
         <div class="col-sm-2">
-          <img src="https://avatars2.githubusercontent.com/u/32497523?s=400&u=f9085eb93ba74f3d95e0738e2ed1ca4488298fae&v=4" class="img-responsive author1 img-circle" style="width:100%" alt="aditya logo" style="top:50%;left:50%;">
+          <img src="https://avatars2.githubusercontent.com/u/32497523?s=400&u=f9085eb93ba74f3d95e0738e2ed1ca4488298fae&v=4" class="img-responsive author1 img-circle" style="width:100%;" alt="aditya logo" style="top:50%;left:50%;">
           <h3 class = "author1">ADITYA RAMAN</h3>
         </div>
-        <div class="col-sm-8"></div>
+        <div class="col-sm-1"></div>
         <div class="col-sm-2">
-          <img src="https://avatars1.githubusercontent.com/u/37652114?s=400&v=4" class="img-responsive author2 img-circle" style="width:100%" alt="arsh logo">
-          <h3 class = "author2">ARSH DEEP</h3>
+          <img src="https://avatars3.githubusercontent.com/u/38214908?s=400&u=26a4bc736aa98574704391cec7213c44cfef923e&v=4" class="img-responsive author1 img-circle" style="width:100%;" alt="harsh logo">
+          <h3 class = "author2">HARSH GAHLOT</h3>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2">
+          <img src="https://avatars0.githubusercontent.com/u/39060560?s=400&v=4" class="img-responsive author1 img-circle" style="width:100%;" alt="ayushi logo">
+          <h3 class = "author3">AYUSHI</h3>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2">
+          <img src="https://avatars0.githubusercontent.com/u/40236624?s=400&v=4" class="img-responsive author1 img-circle" style="width:100%;" alt="ashwin logo">
+          <h3 class = "author4">ASWIN GOPINATHAN</h3>
         </div>
       </div>
     </div>
