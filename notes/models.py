@@ -47,11 +47,32 @@ class notes(models.Model):
 #For Commenting on any post it will require login
 
 class comments(models.Model):
+    
+    PYTHON = 'PYTHON'
+    DJANGO = 'DJANGO'
+    JAVA = 'JAVA'
+    MYSQL = 'MYSQL'
+    MACHINE_LEARNING = 'MACHINE_LEARNING'
+    JAVASCRIPT = 'JAVASCRIPT'
+    FRONT_END = 'FRONT_END'
+    C = 'C/C++'
+
+    NOTE_CHOICE = (
+        (PYTHON,'PYTHON'),
+        (DJANGO,'DJANGO'),
+        (JAVA,'JAVA'),
+        (MYSQL,'MYSQL'),
+        (MACHINE_LEARNING,'MACHINE_LEARNING'),
+        (JAVASCRIPT,'JAVASCRIPT'),
+        (FRONT_END,'FRONT_END'),
+        (C,'C/C++')
+    )
     name = models.CharField(blank = True ,max_length = 50)
+    comment_tag = models.CharField(blank = True,choices = NOTE_CHOICE, max_length=100)
     post_comment= models.CharField(blank = True , max_length = 200)
 
     def __str__(self):
-        return self.post_comment
+        return self.comment_tag
 
 #For storing Feedback from any visitors
 class Feedback(models.Model):
