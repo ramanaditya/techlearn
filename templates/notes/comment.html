@@ -18,7 +18,7 @@
         <div class = "forms">
           <h3>Write your views</h3>
 
-          <form method="post">
+          <form method="post" action="{% url 'notes:comment' %}">
             {% csrf_token %}
             {{ user_form.as_p }}
             <input type="submit" name="" value="Post">
