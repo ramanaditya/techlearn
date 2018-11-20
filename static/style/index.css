@@ -28,6 +28,7 @@
 }
 .row,.col-sm-2,.img-responsive,.authors{
   overflow: hidden;
+  position: inherit;
 }
 .row,.img-responsive{
   max-width:100%;
@@ -57,10 +58,14 @@
 .container-fluid-author{
   margin-top:0;
   padding: 0;
+
   background-color: black;
 }
 .container{
-  background-color: white;
+  background-color: black;
+  padding:0;
+  margin: 0;
+  width: 100%;
 }
 
 hr{
