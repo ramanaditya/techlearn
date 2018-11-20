@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
-from .models import notes,comments
+from .models import notes,comments,UserProfileInfo
 from .forms import CommentForm
 
 def index(request):
@@ -138,7 +138,7 @@ def user_login(request):
         else:
             print("login failed for {}".format(username))
             return HttpResponse("invalid login credentials !!")
-    return render(request, 'notes/login.html',{'user':user,})
+    return render(request, 'notes/login.html',)
 from django.contrib.auth.views import LoginView, LogoutView
 
 
@@ -207,7 +207,8 @@ def comment(request):
         user_form =CommentForm(request.POST)
         
         if user_form.is_valid():
-            name = user_form.cleaned_data.get('name')
+            UserProfileInfo.user = request.user
+            #name = user_form.cleaned_data.get(user.username)
             comment_tag = user_form.cleaned_data.get('comment_tag')
             post_comment = user_form.cleaned_data.get('post_comment')
             user_form.save()

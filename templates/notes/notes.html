@@ -27,8 +27,13 @@
 
             <a href="{% url 'notes:comment' %}"><button type="button" name="button">Add Comment</button></a>
           <div>
+            <form method="post" action="{% url 'notes:comment' %}">
+              {% csrf_token %}
+              {{ user_form.as_p }}
+              <input type="submit" name="" value="Post">
+              </form>
             {% for comment in python_comment %}
-            Name: {{ user.username }}<br>
+            Name: {{ comment.name }}<br>
             Comment: {{ comment.post_comment }}<br><br><hr>
             {% endfor %}
           </div>

@@ -1,6 +1,7 @@
 {% load static %}
 
 .container{
+  
   background-color: grey;
   padding:0;
   margin: 0;
@@ -8,9 +9,11 @@
   padding-bottom: 30px;
 }
 .register{
+  
   text-align: center;
   font-size: 24px;
 }
 .form{
+  
   padding-left: 40px;
 }

@@ -13,10 +13,10 @@
           <h2>thankyou for posting</h2>
           {% else %}
           <div class = "comment">
-          <h1>Edit Form</h1>
+          <h1>Comment Area</h1>
         </div>
         <div class = "forms">
-          <h3>Write your views</h3>
+          <h3>Write your comments</h3>
 
           <form method="post" action="{% url 'notes:comment' %}">
             {% csrf_token %}
