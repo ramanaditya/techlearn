@@ -102,7 +102,6 @@ def register(request):
     registered = False
     if request.method == 'POST':
         user_form = UserForm(request.POST)
-
         if user_form.is_valid():
             user = User.objects.create_user(username=request.POST['username'],
                                             email=request.POST['email'],
@@ -113,11 +112,13 @@ def register(request):
             user.save()
 
             registered = True
+            return render(request,'notes/login.html',{'user_form':user_form,
+                                                     'registered':registered})
         else:
             print(user_form.errors)
     else:
         user_form = UserForm()
-    return render(request,'notes/registration.html',{'user_form':user_form,
+    return render(request,'notes/base.html',{'user_form':user_form,
                                                      'registered':registered})
 
 def user_login(request):
