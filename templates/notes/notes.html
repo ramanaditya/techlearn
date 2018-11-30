@@ -4,6 +4,19 @@
 <link rel="stylesheet" type="text/css" href="{% static 'style/index.css' %}">
 {% endblock %}
 {% block body_block %}
+<style>
+textarea{  
+  /* box-sizing: padding-box; */
+  overflow:hidden;
+  /* demo only: */
+  padding:10px;
+  margin-left:10%;
+  min-width:80%;
+  max-width:80%;
+  font-size:14px;
+  display: block;
+}
+</style>
 <div container="file_python" ><br><br><br>
   <div class="container-fluid text-center note_python" >
     <div class="row content">
@@ -13,6 +26,22 @@
         <p><a href="#">Link</a></p>
       </div>
       <div class="col-sm-8 text-left" style="margin-top: 0px;background: white;height: calc(100vh - 90px);overflow: auto;padding: 12px;">
+        <div class="card" style="width:100%;border: 1px solid grey;box-shadow: 40px;">
+          <div>
+            {% csrf_token %}
+            {{ notes_form.as_p}}
+            <p><label for="id_title"><b>Title</b></label>
+              <input type="text" id="id_title" placeholder="Enter Title name" name="title" required></p>
+            
+            <p><label for="id_content"></label>
+              <textarea type="text" id="id_content" placeholder="Your content goes here" name="content" required></textarea></p>
+            
+            <p><label for="id_password"><b>Password</b></label>
+              <input type="password" id="id_password" placeholder="Enter Password" name="password" required></p>
+          </div>
+          
+          <button type="submit">Submit</button>
+        </div>
         {% for note in python_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
@@ -156,7 +185,21 @@
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
+<script>
+  var textarea = document.querySelector('textarea');
 
+  textarea.addEventListener('keydown', autosize);
+
+  function autosize() {
+    var el = this;
+    setTimeout(function () {
+      el.style.cssText = 'height:auto; padding:0';
+      // for box-sizing other than "content-box" use:
+      // el.style.cssText = '-moz-box-sizing:content-box';
+      el.style.cssText = 'height:' + el.scrollHeight + 'px';
+    }, 0);
+  }
+</script>
 
 
 {% endblock %}
